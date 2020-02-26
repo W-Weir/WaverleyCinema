@@ -1,0 +1,6 @@
+{% extends 'Movies/base.html' %}
+{% block content %}
+    {% for session in sessions %}
+    <h2>{{ session.date }} at {{ session.time }} in cinema {{ session.cinema }} - {{ session.price }}</h2>
+    {% endfor %}
+{% endblock content %}

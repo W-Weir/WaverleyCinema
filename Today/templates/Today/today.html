@@ -1,0 +1,7 @@
+{% extends 'Movies/base.html' %}
+{% block content %}
+    <h1>Today</h1>
+    {% for session in sessions %}
+        <a href=""><h3>{{ session.title }} {{ session.time }}, cinema {{ session.cinema }}</h3></a>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+        <title>Waverley Cinema - {{ title }}</title>
+    {% else %}
+        <title>Waverley Cinema</title>
+    {% endif %}
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .content {
+            width: 60%;
+            margin: 0 auto;
+            transform: translate(-130px, 0);
+        }
+        .movie_card {
+            border: 3px solid black;
+            border-bottom: none;
+            min-height: 270px;
+            position: relative;
+            padding: 0 5px;
+            padding-top: .6rem;
+        }
+        .movie_art {
+            min-width: 175px;
+            min-height: 263px;
+            max-width: 175px;
+            max-height: 263px;
+        }
+        .movie_title {
+            display: inline;
+            text-align: justify;
+            color: green;
+            position: absolute;
+            top: -10px;
+            padding-left: 15px;
+        }
+        .movie_status {
+            display: inline-block;
+            top: 2.4rem;
+            padding-left: 15px;
+            position: absolute;
+        }
+        .movie_length {
+            position: absolute;
+            display: inline;
+            bottom: -0.7rem;
+            left: 190px;
+        }
+        .movie_description {
+            display: inline-block;
+            top: 21%;
+            padding-left: 15px;
+            position: absolute;
+        }
+        .movie_sessions_link {
+            position: absolute;
+            display: inline;
+            bottom: 0;
+            right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/today/">Today</a>
+        <a href="/sessions/">Sessions</a>
+        <a href="/movies/">Movies</a>
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

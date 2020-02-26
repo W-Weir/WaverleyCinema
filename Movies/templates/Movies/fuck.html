@@ -1,0 +1,20 @@
+{% extends 'Movies/base.html' %}
+    {% block content %}
+    <h1 class="page_title">Current Movies</h1>
+        {% for movie in movie_list %}
+            {% if movie.status != 'Ended' %}
+                <div class="movie_card">
+                    <img class="movie_art" src="https://images-na.ssl-images-amazon.com/images/I/41fPuY5DSUL._SX331_BO1,204,203,200_.jpg" alt="{ movie.title } Cover Art">
+                    <a href="{ movie.link }"><h2 class="movie_title">{ movie.title }</h2></a>
+                    {% if movie.status == 'Coming Soon' %} 
+                        <div class="movie_status">{ movie.status } | Released { movie.date_released|date:'d F, Y' }</div>
+                    {% else %}
+                        <div class="movie_status">{ movie.status } | Ending { movie.date_ending|date:'d F, Y' }</div>
+                    {% endif %}
+                    <p class="movie_length">{ movie.length }  { movie.rating }</p>
+                    <p class="movie_description">{ movie.description }</p>
+                    <a class="movie_sessions_link" href="{ movie.link }">View Sessions</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endblock %}
